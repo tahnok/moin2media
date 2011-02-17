@@ -1,0 +1,12 @@
+Converts wikitext from moinmoin to mediawiki
+
+Prerequisites:
+ * moinmoin latex extension
+ * mediawiki <math> extension
+ * mediawiki <syntaxhighlight> extension
+
+Features:
+ * Converts lists (numbered, bulleted, definition)
+ * Converts math formated stuff
+ * Changes indentation (spaces to :)
+
