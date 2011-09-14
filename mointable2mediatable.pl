@@ -11,12 +11,11 @@ open(HANDLE, "moin.txt");
 @testlines = <HANDLE>;
 close HANDLE;
 
-$testlines[0] =~ s/\|\| (.*)/\{\|\n\|$1/g;
-$testlines[-1] =~ s/(.*) \|\|/$1\n\|\}/g;
+$testlines[0] =~ s/\|\|(.*)/\{\| border="1"\n\|$1/g;
+$testlines[-1] =~ s/(.*)\|\|/$1\n\|\}/g;
 foreach (@testlines) {
 	s/(.*)\|\|$/$1\n\|-/g;
-	s/^\|\| (.*)/\|$1/g;
-	s/ \|\| /\n\|/g;
+	s/^\|\|(.*)/\|$1/g;
 }
 
 open(HANDLES, ">media.txt");
