@@ -6,6 +6,7 @@
 #TODO date removal...
 #TODO tables...
 #TODO lists with a. in them
+#TODO fix s/__(.*)__/<u>$1</u>/g;
 
 open(HANDLE, "moin.txt");
 @testlines = <HANDLE>;
@@ -25,6 +26,7 @@ foreach (@testlines) {
 #	s/^ (.*)/:$1/g;	
 	s/^<<Date\((.*)T(.*)\)>>/$1/g;
 	s/\[\[(.*)\]\]/$1/g;
+	s/__(.*)__/<u>$1<\/u>/g;
 }
 
 open(HANDLES, ">media.txt");
