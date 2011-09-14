@@ -4,6 +4,7 @@ Prerequisites:
  * moinmoin latex extension
  * mediawiki <math> extension
  * mediawiki <syntaxhighlight> extension
+ * mediawiki to have $wgAllowImageTag = true
 
 Features:
  * Converts lists (numbered, bulleted, definition)

@@ -1,12 +1,10 @@
 #!/usr/bin/perl
 
-#TODO make the math workt with $ in between
+#TODO make the math work with $ in between
 #TODO fix links
 #TODO fix mixed bulleted/numbered list structure
-#TODO date removal...
 #TODO tables...
 #TODO lists with a. in them
-#TODO fix s/__(.*)__/<u>$1</u>/g;
 
 open(HANDLE, "moin.txt");
 @testlines = <HANDLE>;
@@ -27,6 +25,7 @@ foreach (@testlines) {
 	s/^<<Date\((.*)T(.*)\)>>/$1/g;
 	s/\[\[(.*)\]\]/$1/g;
 	s/__(.*)__/<u>$1<\/u>/g;
+	s/\{\{(http:\/\/[\w\d\-_\.\/]+)(\.png|\.svg|\.jpg|\.jpeg|\.gif|\.bmp|\.PNG|\.SVG|\.JPG|\.JPEG|\.GIF|\.BMP)}\}/<img src="$1$2">/g;
 }
 
 open(HANDLES, ">media.txt");
